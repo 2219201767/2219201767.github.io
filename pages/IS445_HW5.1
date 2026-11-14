@@ -1,0 +1,47 @@
+---
+layout: page
+title: "IS445 HW5 - Bigfoot Sightings"
+permalink: /IS445_HW5/
+---
+
+# IS445 HW5.1
+
+This project explores Bigfoot sighting reports in the United States using Python, Pandas, Altair and Vega-Lite. I created two bar charts to compare the number of reported sightings across different states and seasons.
+
+[The Data](https://github.com/UIUC-iSchool-DataViz/is445_data/blob/main/bfro_reports_fall2022.csv) | [The Analysis](https://github.com/2219201767/2219201767.github.io/blob/main/IS445_HW5.ipynb)
+
+## Plot 1: Top 15 States by Bigfoot Sightings
+
+<iframe
+  src="/HW5.2_chart1.html"
+  width="100%"
+  height="520"
+  style="border:0;"
+  title="Bigfoot sightings by state">
+</iframe>
+
+### Plot 1 Analysis
+
+The first visualization shows the 15 states with the highest number of reported Bigfoot sightings. 
+Washington has the most reports, followed by California and Florida. I used a horizontal bar chart because it makes it easier to compare different states and read their names. 
+The x-axis represents the number of reports using a quantitative (Q) encoding, while the y-axis represents states using a nominal (N) encoding. 
+The bars are sorted from highest to lowest to make the differences easier to understand. I used steel blue for selected bars and light gray for unselected bars. 
+These colors help users focus on one state while still comparing it with others. In Python, I removed rows with missing state values, grouped the data by state, counted the number of reports, sorted the results, and selected the top 15 states.
+
+## Plot 2: Bigfoot Sightings by Season
+
+<iframe
+  src="/HW5.1_chart2.html"
+  width="100%"
+  height="500"
+  style="border:0;"
+  title="Bigfoot sightings by season">
+</iframe>
+
+### Plot 2 Analysis
+
+The second visualization compares the number of reported Bigfoot sightings across four seasons: Spring, Summer, Fall, and Winter. Summer has the highest number of reports, followed by Fall, while Winter has the fewest. I used a vertical bar chart because there are only four categories, making the comparison simple and clear. The x-axis uses a nominal (N) encoding for season, and the y-axis uses a quantitative (Q) encoding for the number of reports. I also used a nominal color encoding to give each season a different color. Spring is green, Summer is yellow, Fall is orange, and Winter is purple. I chose these colors to make the seasons easy to distinguish and to loosely represent their different characteristics. In Python, I filtered the data to include only the four seasons, grouped the reports by season, and counted the number of reports in each group. I also arranged the seasons in their natural order.
+
+## Interactivity
+
+For the first visualization, I added a click selection using Altair. When users click on a state, the selected bar is highlighted in blue while the other bars become light gray. This makes it easier to focus on a particular state and compare its number of reports with other states. I also added tooltips that display the state name and the exact number of reports when users hover over a bar. The second visualization includes tooltips showing the season and the number of reports. These interactions make the visualizations easier to explore and help users understand the data without making the charts too complicated.
